@@ -26,6 +26,6 @@ SRCDIR = src
 
 bin_PROGRAMS = bst
 
-bst_SOURCES = src/bst/main.c src/bst/tree.c
+bst_SOURCES = src/bst.c src/bst/tree.c
 bst_LIBS =
 bst_LDADD = ${bst_LIBS}

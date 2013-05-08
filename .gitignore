@@ -1,0 +1,9 @@
+*.o
+compile
+depcomp
+install-sh
+missing
+Makefile.in
+aclocal.m4
+autom4te.cache/
+configure
