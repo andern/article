@@ -22,17 +22,10 @@ AM_CPPFLAGS = -Iinclude\
               -Wvla -Wall -Wno-missing-braces -Wextra -Wstack-protector\
               -Wunsuffixed-float-constants
 
-              #-Wno-missing-field-initializers -Wformat=2 -Wswitch-default \
-              #-Wswitch-enum -Wcast-align -Wpointer-arith -Wbad-function-cast \
-              #-Wstrict-overflow=5 -Wstrict-prototypes -Winline -Wundef \
-              #-Wnested-externs -Wcast-qual -Wshadow -Wunreachable-code \
-              #-Wlogical-op -Wfloat-equal -Wstrict-aliasing=2 \
-              #-Wredundant-decls -Wold-style-definition -Werror
-
 SRCDIR = src
 
-bin_PROGRAMS = circ
+bin_PROGRAMS = bst
 
-circ_SOURCES = src/main.c src/irc/connection.c src/irc/server.c
-
-circ_LDADD = ${circ_LIBS}
+bst_SOURCES = src/bst/main.c src/bst/tree.c
+bst_LIBS =
+bst_LDADD = ${bst_LIBS}
