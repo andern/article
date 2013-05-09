@@ -24,17 +24,50 @@
  */
 #ifndef ARTCLE_BST_TREE_H
 #define ARTCLE_BST_TREE_H
-
-
 struct inode {
     int data;
     struct inode* left;
     struct inode* right;
 };
 
+/**
+ * Allocate memory for a node, set its data element and return a pointer
+ * to the node.
+ *
+ * @param  data
+ *         data element the new node will have.
+ * @return pointer to the newly allocated node.
+ */
 struct inode* new_inode(int data);
+
+/**
+ * Free a node and all its children recursively.
+ *
+ * @param node
+ *        pointer to node to free.
+ */
 void free_inode(struct inode* node);
 
+/**
+ * Search the subtree of the given node for the given data element.
+ *
+ * @param  data
+ *         data element to look for.
+ * @param  node
+ *         pointer node to start search from.
+ * @return pointer to node that has result. Return null if data is not found.
+ *         
+ */
 struct inode* search(int data, struct inode* node);
-int insert(int data, struct inode* root);
+
+/**
+ * Insert a given data element into the subtree of the given node.
+ *
+ * @param  data
+ *         data element to insert.
+ * @param  node
+ *         insert data element in the subtree of this node. 
+ * @return 1 on successful insertion. Otherwise 0.
+ */
+int insert(int data, struct inode* node);
 #endif

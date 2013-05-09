@@ -29,34 +29,20 @@
 int main(void)
 {
         struct inode* root = new_inode(8);
-        struct inode* n3 = new_inode(3);
-        struct inode* n10 = new_inode(10);
-        struct inode* n1 = new_inode(1);
-        struct inode* n6 = new_inode(6);
-        struct inode* n14 = new_inode(14);
-        struct inode* n4 = new_inode(4);
-        struct inode* n7 = new_inode(7);
-        struct inode* n13 = new_inode(13);
+        /*struct inode* res;*/
 
-        struct inode* res;
+        insert(3, root);
+        insert(10, root);
+        insert(1, root);
+        insert(6, root);
+        insert(14, root);
+        insert(4, root);
+        insert(7, root);
+        insert(13, root);
 
-        root->left = n3;
-        root->right = n10;
-
-        n3->left = n1;
-        n3->right = n6;
-
-        n6->left = n4;
-        n6->right = n7;
-
-        n10->right = n14;
+/*        res = search(7, root);
+        printf("%d\n", res->data); */
         
-        n14->left = n13;
-
-        insert(5, root);
-
-        res = search(5, root);
-        printf("-\n");
-        printf("%d\n", res->data);
+        free_inode(root);
         return 0;
 }
