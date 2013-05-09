@@ -24,12 +24,17 @@
  */
 #ifndef ARTCLE_BST_TREE_H
 #define ARTCLE_BST_TREE_H
-struct i_node {
+
+
+struct inode {
     int data;
-    struct i_node* left;
-    struct i_node* right;
+    struct inode* left;
+    struct inode* right;
 };
 
-const struct i_node* search(int data, const struct i_node* node);
+struct inode* new_inode(int data);
+void free_inode(struct inode* node);
+
+struct inode* search(int data, struct inode* node);
 
 #endif

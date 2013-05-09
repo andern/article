@@ -10,7 +10,7 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS}
 AM_CPPFLAGS = -Iinclude\
               -std=c89\
               -pedantic\
-              -O3\
+              -O0 -g3\
               -Wall -Wextra -Werror\
               -Wdouble-promotion -Wformat=2 -Winit-self -Wmissing-include-dirs\
               -Wswitch-default -Wswitch-enum -Wuninitialized\
