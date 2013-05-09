@@ -42,11 +42,28 @@ void free_inode(struct inode* node)
         free(node);
 }
 
-struct inode* search(int data, struct inode* node)
+static struct inode** rsearch(int data, struct inode** node)
 {
-/*        if (node != NULL) printf("%d\n", node->data); */
-        if (!node) return NULL;
-        if (node->data == data) return node;
-        if (data < node->data) return search(data, node->left);
-        return search(data, node->right);
+        if ((*node) != NULL) printf("%d\n", (*node)->data);
+        if ((*node) == NULL || (*node)->data == data) return node;
+        if (data < (*node)->data) return rsearch(data, &(*node)->left);
+        return rsearch(data, &(*node)->right);
+}
+
+struct inode* search(int data, struct inode* root)
+{
+        struct inode** res = rsearch(data, &root);
+        return *res;
+}
+
+int insert(int data, struct inode* root)
+{
+        struct inode** res = rsearch(data, &root);
+        printf("Before first if\n");
+        if (*res != NULL) return 0;
+        printf("Passed first if\n");
+
+        *res = new_inode(data);
+        if (*res == NULL) return 0;
+        return 1;
 }

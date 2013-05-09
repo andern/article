@@ -36,5 +36,5 @@ struct inode* new_inode(int data);
 void free_inode(struct inode* node);
 
 struct inode* search(int data, struct inode* node);
-
+int insert(int data, struct inode* root);
 #endif
