@@ -24,8 +24,13 @@ AM_CPPFLAGS = -Iinclude\
 
 SRCDIR = src
 
-bin_PROGRAMS = bst
+bin_PROGRAMS = bst stat
 
 bst_SOURCES = src/bst.c src/bst/tree.c
 bst_LIBS =
 bst_LDADD = ${bst_LIBS}
+
+
+stat_SOURCES = src/stat.c src/stat/statarray.c
+stat_LIBS =
+stat_LDADD = ${bst_LIBS}
