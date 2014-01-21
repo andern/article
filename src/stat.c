@@ -36,5 +36,7 @@ int main(void)
                 printf("%f\n", arr->mean);
         }
 
+        free_statarray(arr);
+
         return 0;
 }

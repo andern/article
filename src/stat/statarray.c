@@ -40,6 +40,7 @@ struct statarray* new_statarray(long unsigned int capacity)
 void free_statarray(struct statarray* statarray)
 {
         free(statarray->array);
+        free(statarray);
 }
 
 int statadd(struct statarray* array, double element)
